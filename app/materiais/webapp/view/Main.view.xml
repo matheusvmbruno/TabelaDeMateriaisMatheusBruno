@@ -1,0 +1,36 @@
+<mvc:View
+    controllerName="com.materiais.materiais.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+
+    <Page id="pageMain" title="Tabela de Materiais">
+        <content>
+            <VBox id="vboxMain">
+                <HBox id="hboxFiltro" alignItems="Center" class="sapUiSmallMargin">
+                    <Input id="inputQuantidade" placeholder="Quantidade de materiais" type="Number" width="200px"/>
+                    <Button id="btnFiltrar" text="Filtrar" press=".onFiltrar" class="sapUiSmallMarginBegin"/>
+                </HBox>
+
+                <Table id="tabelaMateriais" items="{tableMaterial>/materiais}">
+                    <columns>
+                        <Column id="colID"><Text id="txtColID" text="ID"/></Column>
+                        <Column id="colNumMat"><Text id="txtColNumMat" text="Num. Material"/></Column>
+                        <Column id="colNome"><Text id="txtColNome" text="Nome"/></Column>
+                        <Column id="colDescr"><Text id="txtColDescr" text="Descrição"/></Column>
+                    </columns>
+                    <items>
+                        <ColumnListItem id="cliMaterial">
+                            <cells>
+                                <Text id="txtID" text="{tableMaterial>ID}"/>
+                                <Text id="txtNumMat" text="{tableMaterial>NumMat}"/>
+                                <Text id="txtNome" text="{tableMaterial>Nome}"/>
+                                <Text id="txtDescr" text="{tableMaterial>Descr}"/>
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+            </VBox>
+        </content>
+    </Page>
+
+</mvc:View>
