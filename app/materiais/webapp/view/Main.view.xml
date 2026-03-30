@@ -12,6 +12,13 @@
                 </HBox>
 
                 <Table id="tabelaMateriais" items="{tableMaterial>/materiais}">
+                    <headerToolbar>
+                        <Toolbar id="toolbarTabela">
+                            <Title id="titleTabela" text="Materiais"/>
+                            <ToolbarSpacer id="spacerTabela"/>
+                            <Button id="btnCriar" text="Criar" type="Emphasized" press=".onAbrirCriar"/>
+                        </Toolbar>
+                    </headerToolbar>
                     <columns>
                         <Column id="colID"><Text id="txtColID" text="ID"/></Column>
                         <Column id="colNumMat"><Text id="txtColNumMat" text="Num. Material"/></Column>
@@ -32,5 +39,27 @@
             </VBox>
         </content>
     </Page>
+
+    <!-- Pop-up Criar Material -->
+    <Dialog id="dialogCriar" title="Criar Material">
+        <content>
+            <VBox id="vboxDialog" class="sapUiSmallMargin">
+                <Label id="labelNumMat" text="Num. Material" required="true"/>
+                <Input id="inputNumMat" placeholder="Ex: 1011" type="Number" class="sapUiSmallMarginBottom"/>
+
+                <Label id="labelNome" text="Nome" required="true"/>
+                <Input id="inputNome" placeholder="Nome do material" class="sapUiSmallMarginBottom"/>
+
+                <Label id="labelDescr" text="Descrição" required="true"/>
+                <Input id="inputDescr" placeholder="Descrição do material"/>
+            </VBox>
+        </content>
+        <beginButton>
+            <Button id="btnConfirmarCriar" text="Confirmar" type="Emphasized" press=".onConfirmarCriar"/>
+        </beginButton>
+        <endButton>
+            <Button id="btnCancelarCriar" text="Cancelar" press=".onCancelarCriar"/>
+        </endButton>
+    </Dialog>
 
 </mvc:View>
