@@ -1,0 +1,9 @@
+### Sucesso
+POST https://port4004-workspaces-ws-5od01.us10.trial.applicationstudio.cloud.sap/odata/v4/material/adicionarMaterial
+Content-Type: application/json
+
+{
+    "NumMat": 1011,
+    "Nome": "Novo Material",
+    "Descr": "Descrição do novo material"
+}
